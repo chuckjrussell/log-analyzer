@@ -1,0 +1,27 @@
+{
+  "name": "log-analyzer",
+  "version": "0.0.1",
+  "description": "A package containing utilities to parse given logs and draw conclusions based on them",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "author": "Chuck Russell",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.0.7",
+    "jest": "^30.0.3",
+    "ts-jest": "^29.4.0",
+    "typescript": "^5.8.3"
+  },
+  "bin": {
+    "log-analyzer": "./dist/index.js"
+  },
+  "dependencies": {
+    "commander": "^14.0.0"
+  }
+}
