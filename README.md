@@ -56,14 +56,14 @@ log-analyzer --log /var/log/syslog
 ## Supported Log Formats
 
 ```txt
-<client ip address> - - [<date>] "<http function> <endpoint> <protocol>" <response code> <port> "-" <user-agent>
+<client ip address> - - (admin |)[<date>] "<http function> <endpoint> <protocol>" <response code> <port> "-" "<user-agent>" <extra data>
 ```
 
 For example:
 
 ```txt
 177.71.128.21 - - [10/Jul/2018:22:21:28 +0200] "GET /intranet-analytics/ HTTP/1.1" 200 3574 "-" "Mozilla/5.0 (X11; U; Linux x86_64; fr-FR) AppleWebKit/534.7 (KHTML, like Gecko) Epiphany/2.30.6 Safari/534.7"
-168.41.191.40 - - [09/Jul/2018:10:11:30 +0200] "GET http://example.net/faq/ HTTP/1.1" 200 3574 "-" "Mozilla/5.0 (Linux; U; Android 2.3.5; en-us; HTC Vision Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
+168.41.191.40 - - admin [09/Jul/2018:10:11:30 +0200] "GET http://example.net/faq/ HTTP/1.1" 200 3574 "-" "Mozilla/5.0 (Linux; U; Android 2.3.5; en-us; HTC Vision Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
 ```
 
 ## Options
