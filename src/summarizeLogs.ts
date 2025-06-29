@@ -5,9 +5,15 @@ import { LogType } from "./parseLog.types";
  * addLog - Allows you to add a log to the analyzer.
  * getSummary - Allows you to get a summary of the logs that have been analyzed so far.
  *
- * This analyzer is designed around performance
+ * This analyzer is designed around performance and parsing high volume data, so it returns
+ * an addLog method for you to use to add data to the rolling summary. It is intended to add
+ * a single log at a time and build the summary as it is called repeatedly.
+ *
+ * In this manner it can be used without reading the entire file, or having all logs in memory
+ * at once, helpful if, for instance it needs to be used in a long running web service or
+ * in a file stream reader parsing millions of records.
  */
-export function createLogAnalyzer(limitResultCount = 3) {
+export function createLogAnalyzer() {
   const ipAddresses = new Map<string, number>();
   const urlVisits = new Map<string, number>();
 
@@ -34,9 +40,14 @@ export function createLogAnalyzer(limitResultCount = 3) {
    * Unique visitors
    * Top N Visited Urls (sorted by frequency)
    * Top N Visitors (sorted by frequency)
-   * @returns
+   * @param limitResultCount The number of items to display in the top sections
+   * @returns and object of the shape {
+   *   uniqueVisitors: number,
+   *   topActiveVistitors: string[],
+   *   topVisitedUrls: string[]
+   * }
    */
-  function getSummary() {
+  function getSummary(limitResultCount = 3) {
     const topActiveVisitors = Array.from(ipAddresses.entries())
       .sort((a, b) => b[1] - a[1])
       .slice(0, limitResultCount)

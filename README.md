@@ -69,11 +69,12 @@ For example:
 
 ## Options
 
-| Option         | Short       | Description                     |
-| -------------- | ----------- | ------------------------------- |
-| `--log <path>` | `-l <path>` | Path to the log file to analyze |
-| `--help`       | `-h`        | Display help information        |
-| `--version`    | `-V`        | Display version information     |
+| Option         | Short       | Description                          |
+| -------------- | ----------- | ------------------------------------ |
+| `--log <path>` | `-l <path>` | Path to the log file to analyze      |
+| `--top <#>`    | `-t <#>`    | Number of top results in the summary |
+| `--help`       | `-h`        | Display help information             |
+| `--version`    | `-V`        | Display version information          |
 
 ## Output
 
