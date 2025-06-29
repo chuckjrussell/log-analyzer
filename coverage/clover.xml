@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1751195873436" clover="3.2.0">
+  <project timestamp="1751195873436" name="All files">
+    <metrics statements="56" coveredstatements="28" conditionals="10" coveredconditionals="7" methods="11" coveredmethods="8" elements="77" coveredelements="43" complexity="0" loc="56" ncloc="56" packages="1" files="3" classes="3"/>
+    <file name="parseFile.ts" path="/Users/chuckrussell/Documents/Programming/log-analyzer/src/parseFile.ts">
+      <metrics statements="28" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <line num="1" count="0" type="stmt"/>
+      <line num="2" count="0" type="stmt"/>
+      <line num="3" count="0" type="stmt"/>
+      <line num="4" count="0" type="stmt"/>
+      <line num="12" count="0" type="cond" truecount="0" falsecount="1"/>
+      <line num="14" count="0" type="stmt"/>
+      <line num="15" count="0" type="stmt"/>
+      <line num="19" count="0" type="stmt"/>
+      <line num="21" count="0" type="stmt"/>
+      <line num="22" count="0" type="stmt"/>
+      <line num="24" count="0" type="stmt"/>
+      <line num="25" count="0" type="stmt"/>
+      <line num="26" count="0" type="stmt"/>
+      <line num="27" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="28" count="0" type="stmt"/>
+      <line num="29" count="0" type="stmt"/>
+      <line num="31" count="0" type="stmt"/>
+      <line num="33" count="0" type="stmt"/>
+      <line num="36" count="0" type="stmt"/>
+      <line num="38" count="0" type="stmt"/>
+      <line num="39" count="0" type="stmt"/>
+      <line num="40" count="0" type="stmt"/>
+      <line num="41" count="0" type="stmt"/>
+      <line num="42" count="0" type="stmt"/>
+      <line num="43" count="0" type="stmt"/>
+      <line num="44" count="0" type="stmt"/>
+      <line num="47" count="0" type="stmt"/>
+      <line num="49" count="0" type="stmt"/>
+    </file>
+    <file name="parseLog.ts" path="/Users/chuckrussell/Documents/Programming/log-analyzer/src/parseLog.ts">
+      <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="20" count="8" type="stmt"/>
+      <line num="22" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="24" count="6" type="stmt"/>
+      <line num="28" count="6" type="stmt"/>
+      <line num="30" count="6" type="stmt"/>
+      <line num="44" count="6" type="stmt"/>
+    </file>
+    <file name="summarizeLogs.ts" path="/Users/chuckrussell/Documents/Programming/log-analyzer/src/summarizeLogs.ts">
+      <metrics statements="19" coveredstatements="19" conditionals="5" coveredconditionals="5" methods="7" coveredmethods="7"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="17" count="9" type="stmt"/>
+      <line num="18" count="9" type="stmt"/>
+      <line num="25" count="24" type="stmt"/>
+      <line num="26" count="24" type="cond" truecount="2" falsecount="0"/>
+      <line num="27" count="11" type="stmt"/>
+      <line num="29" count="24" type="stmt"/>
+      <line num="31" count="24" type="stmt"/>
+      <line num="32" count="24" type="cond" truecount="2" falsecount="0"/>
+      <line num="33" count="14" type="stmt"/>
+      <line num="35" count="24" type="stmt"/>
+      <line num="51" count="9" type="stmt"/>
+      <line num="52" count="6" type="stmt"/>
+      <line num="54" count="12" type="stmt"/>
+      <line num="56" count="9" type="stmt"/>
+      <line num="57" count="2" type="stmt"/>
+      <line num="59" count="10" type="stmt"/>
+      <line num="61" count="9" type="stmt"/>
+      <line num="68" count="9" type="stmt"/>
+    </file>
+  </project>
+</coverage>
