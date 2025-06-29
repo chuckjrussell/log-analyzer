@@ -19,6 +19,12 @@ Install Dependencies
 npm i
 ```
 
+Build the package
+
+```bash
+npm run build
+```
+
 Add symlink to the package so that you can run it from the command line
 
 ```bash
