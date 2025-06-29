@@ -1,5 +1,12 @@
 import { LogType } from "./parseLog.types";
 
+/**
+ * Creates a log analyzer which exposes two methods:
+ * addLog - Allows you to add a log to the analyzer.
+ * getSummary - Allows you to get a summary of the logs that have been analyzed so far.
+ *
+ * This analyzer is designed around performance
+ */
 export function createLogAnalyzer(limitResultCount = 3) {
   const ipAddresses = new Map<string, number>();
   const urlVisits = new Map<string, number>();
