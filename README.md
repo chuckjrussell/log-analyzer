@@ -71,6 +71,8 @@ For example:
 168.41.191.40 - - admin [09/Jul/2018:10:11:30 +0200] "GET http://example.net/faq/ HTTP/1.1" 200 3574 "-" "Mozilla/5.0 (Linux; U; Android 2.3.5; en-us; HTC Vision Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
 ```
 
+If the log file item does not match the format above, the line will be skipped rather than ending the stream.
+
 ## Options
 
 | Option         | Short       | Description                          |
