@@ -4,9 +4,10 @@ A minimal log analyzer meant to draw conclusions based on logs.
 
 ## Requirements
 
-NPM > 18.
+- Node.js 16.0 or higher
+- Read access to the log files you want to analyze
 
-Note: I have tested this with NPM as a package manager, it may work with yarn, pnpm or bun, but it is untested so run at your own risk.
+**Note** This has been tested with NPM as a package manager, it may work with yarn, pnpm or bun, but it is untested so run at your own risk.
 
 ## Installation
 
@@ -56,7 +57,7 @@ log-analyzer --log /var/log/syslog
 ## Supported Log Formats
 
 ```txt
-<client ip address> - - (admin |)[<date>] "<http function> <endpoint> <protocol>" <response code> <port> "-" "<user-agent>" <extra data>
+<client ip address> - <user | -> [<date>] "<http function> <endpoint> <protocol>" <response code> <port> "-" "<user-agent>" <extra data>
 ```
 
 For example:
@@ -82,10 +83,7 @@ The analyzer provides comprehensive insights including:
 - **Most visited URLS**: The top 3 most visited IP Addresses
 - **Most active IP Addresses**: The top 3 most active IP Addressed
 
-## Requirements
-
-- Node.js 16.0 or higher
-- Read access to the log files you want to analyze
+**Note** Because Javascripts sorting is non-stable, ties for most values are decided to be ordered randomly. This is an area that there can be some improvement in future releases if the demand is high enough.
 
 ## Development
 
