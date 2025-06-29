@@ -50,14 +50,12 @@ log-analyzer -l /path/to/your/logfile.log
 ### Examples
 
 ```bash
-# Analyze an Apache access log
-log-analyzer --log /var/log/apache2/access.log
+# Analyze the included mocks
+log-analyzer -l ./src/__mocks__/programming-task-example-data.log
 
-# Analyze an application log
-log-analyzer -l ./logs/app.log
+# Analyze the included mocks and adjust the top limiting to top 5 visitors and endpoints
+log-analyzer -l ./src/__mocks__/programming-task-example-data.log -t 5
 
-# Analyze a system log
-log-analyzer --log /var/log/syslog
 ```
 
 ## Supported Log Formats
