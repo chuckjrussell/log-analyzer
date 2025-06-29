@@ -4,7 +4,7 @@ A minimal log analyzer meant to draw conclusions based on logs.
 
 ## Requirements
 
-- Node.js 21 or higher
+- Node.js 18 or higher
 - Read access to the log files you want to analyze
 
 **Note** This has been tested with NPM as a package manager, it may work with yarn, pnpm or bun, but it is untested so run at your own risk.
