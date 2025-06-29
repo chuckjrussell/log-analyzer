@@ -4,7 +4,7 @@ A minimal log analyzer meant to draw conclusions based on logs.
 
 ## Requirements
 
-- Node.js 21 or higher
+- Node.js 18 or higher
 - Read access to the log files you want to analyze
 
 **Note** This has been tested with NPM as a package manager, it may work with yarn, pnpm or bun, but it is untested so run at your own risk.
@@ -69,11 +69,12 @@ For example:
 
 ## Options
 
-| Option         | Short       | Description                     |
-| -------------- | ----------- | ------------------------------- |
-| `--log <path>` | `-l <path>` | Path to the log file to analyze |
-| `--help`       | `-h`        | Display help information        |
-| `--version`    | `-V`        | Display version information     |
+| Option         | Short       | Description                          |
+| -------------- | ----------- | ------------------------------------ |
+| `--log <path>` | `-l <path>` | Path to the log file to analyze      |
+| `--top <#>`    | `-t <#>`    | Number of top results in the summary |
+| `--help`       | `-h`        | Display help information             |
+| `--version`    | `-V`        | Display version information          |
 
 ## Output
 

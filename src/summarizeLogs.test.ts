@@ -93,13 +93,13 @@ describe("Single Log Parsing", () => {
   });
 
   it("should handle changing the default limit result count", () => {
-    const logAnalyzer = createLogAnalyzer(1);
+    const logAnalyzer = createLogAnalyzer();
 
     logAnalyzer.addLog({ ...simpleLog, clientIp: "177.71.128.21" });
     logAnalyzer.addLog({ ...simpleLog, clientIp: "0.0.0.0" });
     logAnalyzer.addLog({ ...simpleLog, clientIp: "0.0.0.0" });
 
-    const summary = logAnalyzer.getSummary();
+    const summary = logAnalyzer.getSummary(1);
     expect(summary.uniqueVisitors).toBe(2);
     expect(summary.topActiveVisitors).toEqual(["0.0.0.0"]);
     expect(summary.topVisitedUrls).toEqual(["/intranet-analytics/"]);
