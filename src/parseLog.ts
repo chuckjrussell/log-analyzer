@@ -1,4 +1,9 @@
-import { HttpMethod, HttpStatusCode, LogType } from "./parseLog.types";
+import {
+  HttpMethod,
+  HttpStatusCode,
+  LogType,
+  RequestType,
+} from "./parseLog.types";
 import moment from "moment";
 
 /**
@@ -16,29 +21,48 @@ import moment from "moment";
 const logRegex =
   /(\S*)\s+(\S*)\s+(\S*)\s+\[(.*)\]\s+\"([^"]+)\"\s+(\d+)\s+(\S+)\s+\"(.*)\"\s+\"(.*)\"(?:.*?)/;
 
+const logGroups = {
+  clientIpAddress: 1,
+  role: 3,
+  date: 4,
+  request: 5,
+  response: 6,
+  port: 7,
+  userAgent: 9,
+};
+
 export function parseLog(log: string) {
   const result = log.match(logRegex);
 
   if (!result) return null;
 
-  const request = result[5].split(" ");
+  // Request format:
+  // METHOD Uri Protocol
+  // ie "GET /intranet-analytics/ HTTP/1.1"
+  const splitRequest = result[logGroups.request].split(" ");
+  if (splitRequest.length !== 3) {
+    //method, uri, protocol (3)
+    return null;
+  }
+
+  const request: RequestType = {
+    method: splitRequest[0] as HttpMethod,
+    endpoint: splitRequest[1],
+    protocol: splitRequest[2],
+  };
 
   // Log date format
-  //10/Jul/2018:22:21:28 +0200
+  // 10/Jul/2018:22:21:28 +0200
   const date = moment(result[4], "DD/MMM/YYYY:HH:mm:ss ZZ").toDate();
 
   const parsedLog: LogType = {
-    clientIp: result[1],
-    role: result[3],
+    clientIp: result[logGroups.clientIpAddress],
+    role: result[logGroups.role],
+    responseCode: result[logGroups.response] as HttpStatusCode,
+    port: result[logGroups.port],
+    userAgent: result[logGroups.userAgent],
     date: date,
-    request: {
-      method: request[0] as HttpMethod,
-      endpoint: request[1],
-      protocol: request[2],
-    },
-    responseCode: result[6] as HttpStatusCode,
-    port: result[7],
-    userAgent: result[9],
+    request: request,
   };
 
   return parsedLog;

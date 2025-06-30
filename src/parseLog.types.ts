@@ -83,15 +83,17 @@ export type HttpStatusCode =
   | "510" // Not Extended
   | "511"; // Network Authentication Required
 
+export type RequestType = {
+  method: HttpMethod;
+  endpoint: string;
+  protocol: string;
+};
+
 export type LogType = {
   clientIp: string;
   role: string;
   date: Date;
-  request: {
-    method: HttpMethod;
-    endpoint: string;
-    protocol: string;
-  };
+  request: RequestType;
   responseCode: HttpStatusCode;
   port: string;
   userAgent: string;
